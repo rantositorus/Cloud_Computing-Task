@@ -1,0 +1,19 @@
+version: '3'
+services:
+  web:
+    build: ./app
+    ports:
+      - "8000:5000"
+    networks:
+      - counter-net
+    depends_on:
+      - redis
+
+  redis:
+    image: "redis:alpine"
+    networks:
+      - counter-net
+
+networks:
+  counter-net:
+    driver: bridge

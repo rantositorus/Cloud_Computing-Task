@@ -1,0 +1,1 @@
+docker build -t mypythonapp:1.0 .
